@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إبراهيم الأسعد - مهندس برمجيات</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { 
+            font-family: 'Cairo', 'Tajawal', sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .skill-tag {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .experience-card {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            transition: all 0.3s ease;
+        }
+        .experience-card:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .project-card {
+            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: scale(1.02);
+        }
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 3s ease infinite;
+        }
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 2px;
+        }
+        .contact-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div class="min-h-screen p-4">
+        <!-- Header Section -->
+        <div class="max-w-6xl mx-auto">
+            <div class="glass-effect rounded-3xl p-8 mb-8 floating-animation">
+                <div class="flex flex-col lg:flex-row items-center gap-8">
+                    <div class="relative">
+                        <div class="w-32 h-32 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 p-1">
+                            <div class="w-full h-full rounded-full bg-gray-800 flex items-center justify-center text-4xl font-bold">
+                                إ.أ
+                            </div>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check text-white text-sm"></i>
+                        </div>
+                    </div>
+                    <div class="text-center lg:text-right flex-1">
+                        <h1 class="text-4xl lg:text-5xl font-bold mb-2 gradient-text">إبراهيم الأسعد</h1>
+                        <p class="text-xl text-gray-200 mb-4">مهندس برمجيات – مطور ويب وذكاء اصطناعي</p>
+                        <div class="flex flex-wrap gap-3 justify-center lg:justify-end">
+                            <div class="contact-item rounded-full px-4 py-2 flex items-center gap-2">
+                                <i class="fas fa-envelope text-blue-300"></i>
+                                <span class="text-sm">eng.ebrahim.alasaad.1990@gmail.com</span>
+                            </div>
+                            <div class="contact-item rounded-full px-4 py-2 flex items-center gap-2">
+                                <i class="fas fa-phone text-green-300"></i>
+                                <span class="text-sm">+352 681 589 097</span>
+                            </div>
+                            <div class="contact-item rounded-full px-4 py-2 flex items-center gap-2">
+                                <i class="fas fa-map-marker-alt text-red-300"></i>
+                                <span class="text-sm">سرمدا الجديدة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Left Column -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Experience Section -->
+                    <div class="glass-effect rounded-3xl p-8">
+                        <h2 class="text-2xl font-bold mb-6 section-title">💼 الخبرات المهنية</h2>
+                        <div class="space-y-6">
+                            <div class="experience-card rounded-xl p-6 text-white">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="text-xl font-bold">Laravel Developer</h3>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">2021 – 2025</span>
+                                </div>
+                                <p class="text-blue-100 mb-2">الأيادي الخضراء | SAMS | SRD</p>
+                                <ul class="text-sm space-y-1 text-blue-50">
+                                    <li>• طورت نظام IPC لإدارة المنشآت الطبية والمرضى</li>
+                                    <li>• شاركت في تطوير نظام معلومات لمنشآت SAMS</li>
+                                </ul>
+                            </div>
+
+                            <div class="experience-card rounded-xl p-6 text-white">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="text-xl font-bold">مسؤول معلومات</h3>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">2018 – 2021</span>
+                                </div>
+                                <p class="text-blue-100 mb-2">Midmar</p>
+                                <ul class="text-sm space-y-1 text-blue-50">
+                                    <li>• بناء أنظمة رقمية لإدارة المعلومات حسب احتياجات العملاء</li>
+                                    <li>• تطوير أدوات Python لمعالجة قواعد بيانات ضخمة</li>
+                                    <li>• تنفيذ برامج ذكاء اصطناعي تعمل تلقائيًا</li>
+                                </ul>
+                            </div>
+
+                            <div class="experience-card rounded-xl p-6 text-white">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="text-xl font-bold">مطور ويب حر</h3>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">2017 – الآن</span>
+                                </div>
+                                <p class="text-blue-100 mb-2">Freelancer</p>
+                                <ul class="text-sm space-y-1 text-blue-50">
+                                    <li>• تنفيذ مشاريع على منصات: مستقل، Upwork</li>
+                                    <li>• تطوير مواقع باستخدام Laravel، WordPress، React</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects Section -->
+                    <div class="glass-effect rounded-3xl p-8">
+                        <h2 class="text-2xl font-bold mb-6 section-title">🌐 المشاريع والإنجازات</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="project-card rounded-xl p-6 text-white">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <i class="fas fa-robot text-2xl"></i>
+                                    <h3 class="text-lg font-bold">بوت ذكي للتسوق</h3>
+                                </div>
+                                <p class="text-sm text-purple-100">بوت ذكي لتسوق الملابس يعمل بالذكاء الاصطناعي على تيليغرام يقترح المنتجات من أصل 88 ألف منتج</p>
+                            </div>
+
+                            <div class="project-card rounded-xl p-6 text-white">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <i class="fas fa-horse text-2xl"></i>
+                                    <h3 class="text-lg font-bold">نظام تحليل الخيول</h3>
+                                </div>
+                                <p class="text-sm text-purple-100">سحب وتحليل 7 مليون معلومة للخيول منذ 1900 بطرق مبتكرة تتغلب على antibot</p>
+                            </div>
+
+                            <div class="project-card rounded-xl p-6 text-white">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <i class="fas fa-graduation-cap text-2xl"></i>
+                                    <h3 class="text-lg font-bold">منصة تعليمية</h3>
+                                </div>
+                                <p class="text-sm text-purple-100">منصة تعليمية إلكترونية لمنظمة Midmar وموقع رسمي لجامعة الشمال</p>
+                            </div>
+
+                            <div class="project-card rounded-xl p-6 text-white">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <i class="fas fa-chart-line text-2xl"></i>
+                                    <h3 class="text-lg font-bold">أدوات تحليل البيانات</h3>
+                                </div>
+                                <p class="text-sm text-purple-100">أدوات تحليل ومعالجة بيانات متقدمة لـ SRD و SAMS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="space-y-8">
+                    <!-- Skills Section -->
+                    <div class="glass-effect rounded-3xl p-8">
+                        <h2 class="text-2xl font-bold mb-6 section-title">🛠️ المهارات التقنية</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="font-semibold mb-3 text-yellow-300">Backend & APIs</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">Laravel</span>
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">PHP</span>
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">MySQL</span>
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">REST APIs</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="font-semibold mb-3 text-green-300">Frontend</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">React</span>
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">Vue.js</span>
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">Tailwind CSS</span>
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">Inertia.js</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="font-semibold mb-3 text-blue-300">Python & AI</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">Python</span>
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">Selenium</span>
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">AI Bots</span>
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">Automation</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="font-semibold mb-3 text-purple-300">Tools & Others</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">WordPress</span>
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">Git</span>
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">SEO</span>
+                                    <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium text-white">CRM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Section -->
+                    <div class="glass-effect rounded-3xl p-8">
+                        <h2 class="text-2xl font-bold mb-6 section-title">🎓 التعليم</h2>
+                        <div class="space-y-4">
+                            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-4">
+                                <h3 class="font-bold text-white">ماجستير هندسة برمجيات</h3>
+                                <p class="text-indigo-100 text-sm">مرحلة الرسالة - 2022</p>
+                            </div>
+                            <div class="bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl p-4">
+                                <h3 class="font-bold text-white">بكالوريوس هندسة حواسيب</h3>
+                                <p class="text-blue-100 text-sm">2013 - معدل 81%</p>
+                            </div>
+                            <div class="bg-gradient-to-r from-green-500 to-teal-600 rounded-xl p-4">
+                                <h3 class="font-bold text-white">تعلم ذاتي مستمر</h3>
+                                <p class="text-green-100 text-sm">Udemy وورشات متخصصة منذ 2013</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Languages Section -->
+                    <div class="glass-effect rounded-3xl p-8">
+                        <h2 class="text-2xl font-bold mb-6 section-title">🗣️ اللغات</h2>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">العربية</span>
+                                <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm">اللغة الأم</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">الإنجليزية</span>
+                                <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">جيد جداً</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Special Features -->
+                    <div class="glass-effect rounded-3xl p-8">
+                        <h2 class="text-2xl font-bold mb-6 section-title">✨ مميزات إضافية</h2>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 p-3 bg-white bg-opacity-10 rounded-lg">
+                                <i class="fas fa-blog text-orange-400"></i>
+                                <span class="text-sm">مدون تقني بلغتين</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-white bg-opacity-10 rounded-lg">
+                                <i class="fas fa-cogs text-blue-400"></i>
+                                <span class="text-sm">شغوف بالأتمتة والذكاء الاصطناعي</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-white bg-opacity-10 rounded-lg">
+                                <i class="fas fa-lightbulb text-yellow-400"></i>
+                                <span class="text-sm">تصميم حلول تقنية مخصصة</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-white bg-opacity-10 rounded-lg">
+                                <i class="fas fa-rocket text-purple-400"></i>
+                                <span class="text-sm">سريع التعلم والتطوير</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="glass-effect rounded-3xl p-6 mt-8 text-center">
+                <div class="flex justify-center items-center gap-4 mb-4">
+                    <a href="https://www.linkedin.com/in/ibrahim-alasaad-034553114/" class="bg-blue-600 hover:bg-blue-700 p-3 rounded-full transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="mailto:eng.ebrahim.alasaad.1990@gmail.com" class="bg-red-500 hover:bg-red-600 p-3 rounded-full transition-all duration-300 hover:scale-110">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="tel:+352681589097" class="bg-green-500 hover:bg-green-600 p-3 rounded-full transition-all duration-300 hover:scale-110">
+                        <i class="fas fa-phone text-xl"></i>
+                    </a>
+                </div>
+                <p class="text-gray-300">© 2025 إبراهيم الأسعد - جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
