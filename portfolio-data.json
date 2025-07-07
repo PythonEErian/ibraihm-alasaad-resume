@@ -1,0 +1,142 @@
+{
+    "portfolioSections": [
+        {
+            "id": "web-development",
+            "title": "تطوير الويب",
+            "icon": "fas fa-globe",
+            "items": [
+                {
+                    "title": "نظام إدارة المرضى IPC",
+                    "description": "نظام شامل لإدارة المنشآت الطبية والمرضى باستخدام Laravel و MySQL",
+                    "type": "video",
+                    "media": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                    "technologies": [
+                        "Laravel",
+                        "PHP",
+                        "MySQL",
+                        "Bootstrap"
+                    ],
+                    "year": "2023"
+                },
+                {
+                    "title": "منصة التعليم الإلكتروني",
+                    "description": "منصة تعليمية متقدمة مع نظام إدارة المحتوى وتتبع التقدم",
+                    "type": "image",
+                    "media": "https://via.placeholder.com/600x400/4f46e5/ffffff?text=منصة+التعليم",
+                    "technologies": [
+                        "React",
+                        "Laravel",
+                        "Tailwind CSS"
+                    ],
+                    "year": "2022"
+                },
+                {
+                    "title": "موقع جامعة الشمال",
+                    "description": "موقع رسمي للجامعة مع نظام إدارة المحتوى ونظام القبول الإلكتروني",
+                    "type": "text",
+                    "content": "تم تطوير موقع جامعة الشمال ليكون منصة شاملة تضم:\n• نظام إدارة المحتوى المتقدم\n• نظام القبول الإلكتروني\n• منصة التعلم الإلكتروني\n• نظام إدارة الطلاب والدرجات\n• تصميم متجاوب يعمل على جميع الأجهزة",
+                    "technologies": [
+                        "WordPress",
+                        "PHP",
+                        "MySQL",
+                        "JavaScript"
+                    ],
+                    "year": "2021"
+                }
+            ]
+        },
+        {
+            "id": "ai-automation",
+            "title": "الذكاء الاصطناعي والأتمتة",
+            "icon": "fas fa-robot",
+            "items": [
+                {
+                    "title": "بوتات التداول الذكية",
+                    "description": "مطور بوتات تداول MQ5 و MQ4 بخوارزمية رياضية من تأليفي",
+                    "type": "text",
+                    "content": "تطوير بوتات تداول متقدمة للفوركس والأسهم:\n• خوارزمية رياضية مبتكرة من تأليفي الشخصي\n• برمجة بلغات MQ4 و MQ5 لمنصات MetaTrader\n• تحليل تقني متقدم وإشارات تداول ذكية\n• إدارة المخاطر وتحسين الأرباح تلقائياً\n• باك تست شامل لضمان الأداء الأمثل",
+                    "technologies": [
+                        "MQL4",
+                        "MQL5",
+                        "MetaTrader",
+                        "Mathematical Algorithms",
+                        "Trading Strategies"
+                    ],
+                    "year": "2024"
+                },
+                {
+                    "title": "بوت التسوق الذكي",
+                    "description": "بوت ذكي للتسوق على تيليغرام يقترح المنتجات من 88 ألف منتج",
+                    "type": "video",
+                    "media": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                    "technologies": [
+                        "Python",
+                        "Telegram Bot API",
+                        "Machine Learning",
+                        "NLP"
+                    ],
+                    "year": "2024"
+                },
+                {
+                    "title": "نظام تحليل بيانات الخيول",
+                    "description": "سحب وتحليل 7 مليون معلومة للخيول منذ 1900 بطرق مبتكرة",
+                    "type": "image",
+                    "media": "https://via.placeholder.com/600x400/059669/ffffff?text=تحليل+الخيول",
+                    "technologies": [
+                        "Python",
+                        "Selenium",
+                        "Pandas",
+                        "Data Analysis"
+                    ],
+                    "year": "2023"
+                },
+                {
+                    "title": "أدوات الأتمتة المتقدمة",
+                    "description": "مجموعة من الأدوات التي تعمل تلقائياً لمعالجة البيانات الضخمة",
+                    "type": "text",
+                    "content": "تم تطوير مجموعة شاملة من أدوات الأتمتة:\n• أدوات سحب البيانات من مصادر متعددة\n• معالجة وتنظيف البيانات تلقائياً\n• تحليل البيانات وإنتاج التقارير\n• إرسال التقارير تلقائياً للمستخدمين\n• نظام تنبيهات ذكي",
+                    "technologies": [
+                        "Python",
+                        "Selenium",
+                        "BeautifulSoup",
+                        "Pandas"
+                    ],
+                    "year": "2022"
+                }
+            ]
+        },
+        {
+            "id": "data-analysis",
+            "title": "تحليل البيانات",
+            "icon": "fas fa-chart-line",
+            "items": [
+                {
+                    "title": "لوحة تحكم تحليلية لـ SAMS",
+                    "description": "نظام تحليل متقدم لبيانات المنظمة مع تصورات تفاعلية",
+                    "type": "image",
+                    "media": "https://via.placeholder.com/600x400/dc2626/ffffff?text=لوحة+التحكم",
+                    "technologies": [
+                        "Python",
+                        "Plotly",
+                        "Dash",
+                        "PostgreSQL"
+                    ],
+                    "year": "2024"
+                },
+                {
+                    "title": "تقارير SRD التفاعلية",
+                    "description": "نظام إنتاج التقارير التلقائي مع تحليل البيانات المتقدم",
+                    "type": "video",
+                    "media": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                    "technologies": [
+                        "Python",
+                        "Jupyter",
+                        "Matplotlib",
+                        "Excel"
+                    ],
+                    "year": "2023"
+                }
+            ]
+        }
+    ]
+}
