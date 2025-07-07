@@ -9,7 +9,7 @@
                     "title": "نظام إدارة المرضى IPC",
                     "description": "نظام شامل لإدارة المنشآت الطبية والمرضى باستخدام Laravel و MySQL",
                     "type": "video",
-                    "media": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                    "media": "https://www.youtube.com",
                     "technologies": [
                         "Laravel",
                         "PHP",
@@ -68,7 +68,7 @@
                     "title": "بوت التسوق الذكي",
                     "description": "بوت ذكي للتسوق على تيليغرام يقترح المنتجات من 88 ألف منتج",
                     "type": "video",
-                    "media": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                    "media": "https://www.youtube.com",
                     "technologies": [
                         "Python",
                         "Telegram Bot API",
@@ -127,7 +127,7 @@
                     "title": "تقارير SRD التفاعلية",
                     "description": "نظام إنتاج التقارير التلقائي مع تحليل البيانات المتقدم",
                     "type": "video",
-                    "media": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                    "media": "https://www.youtube.com",
                     "technologies": [
                         "Python",
                         "Jupyter",
