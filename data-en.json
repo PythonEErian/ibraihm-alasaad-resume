@@ -1,0 +1,385 @@
+{
+    "personalInfo": {
+        "name": "Ibrahim Alasaad",
+        "title": "Software Engineer – Web Developer & AI Specialist",
+        "email": "eng.ebrahim.alasaad.1990@gmail.com",
+        "phone": "whatsapp 352681589097",
+        "location": "Syria - Idlib - New Sarmada"
+    },
+    "sections": {
+        "aboutMe": "🌟 About Me",
+        "experience": "💼 Professional Experience",
+        "portfolio": "💼 Portfolio",
+        "skills": "🛠️ Technical Skills",
+        "education": "🎓 Education",
+        "languages": "🗣️ Languages",
+        "features": "✨ Special Features"
+    },
+    "aboutMeCards": {
+        "academic": {
+            "title": "Academic Background",
+            "items": [
+                "Master's in AI - Thesis Stage",
+                "Computer Engineering - 81% GPA"
+            ]
+        },
+        "passion": {
+            "title": "Passion & Vision",
+            "items": [
+                "Self-learning and Innovation",
+                "Developing Useful Tools"
+            ]
+        },
+        "ambitions": {
+            "title": "Ambitions",
+            "items": [
+                "Innovative Technical Solutions",
+                "AI-Powered Smart Systems"
+            ]
+        },
+        "philosophy": {
+            "title": "Programming Philosophy",
+            "content": "Programming is the art of problem-solving and creating solutions that make the world better"
+        }
+    },
+    "stats": [
+        {
+            "value": "7+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "50+",
+            "label": "Projects"
+        },
+        {
+            "value": "10+",
+            "label": "Technologies"
+        },
+        {
+            "value": "100%",
+            "label": "Quality"
+        }
+    ],
+    "experiences": [
+        {
+            "title": "Laravel Developer",
+            "company": "Green Hands | SAMS | SRD",
+            "period": "2021 – 2025",
+            "responsibilities": [
+                "Developed IPC system for medical facility and patient management",
+                "Participated in developing information system for SAMS facilities",
+                "Built advanced user interfaces and comprehensive management systems",
+                "Collaborated with medical teams to ensure requirement fulfillment"
+            ]
+        },
+        {
+            "title": "Trading Bots Developer",
+            "company": "Freelance Developer",
+            "period": "2024 – Present",
+            "responsibilities": [
+                "Developing MQ5 and MQ4 trading bots with self-authored mathematical algorithms",
+                "Advanced technical analysis and intelligent trading signals",
+                "Creating innovative automated trading strategies",
+                "Performance optimization and risk management in financial markets"
+            ]
+        },
+        {
+            "title": "Instructor & Graduation Project Supervisor",
+            "company": "Sham University - Azaz",
+            "period": "2020",
+            "responsibilities": [
+                "Teaching computer science and programming courses",
+                "Supervising student graduation projects",
+                "Guiding students in developing their technical skills",
+                "Evaluating and reviewing academic projects"
+            ]
+        },
+        {
+            "title": "Information Manager",
+            "company": "Midmar",
+            "period": "2018 – 2021",
+            "responsibilities": [
+                "Building digital systems for information management",
+                "Developing Python tools for processing large databases",
+                "Designing and implementing technical solutions to improve work efficiency",
+                "Managing and maintaining information infrastructure"
+            ]
+        },
+        {
+            "title": "Computer Science Instructor",
+            "company": "Northern University",
+            "period": "2018",
+            "responsibilities": [
+                "Teaching computer science and informatics courses",
+                "Preparing educational curricula for students",
+                "Developing modern and effective teaching methods",
+                "Evaluating student performance and providing academic support"
+            ]
+        },
+        {
+            "title": "Freelance Web Developer",
+            "company": "Freelancer",
+            "period": "2017 – Present",
+            "responsibilities": [
+                "Executing projects on platforms: Mostaql, Upwork",
+                "Developing websites using Laravel, WordPress, React",
+                "Working with clients from around the world",
+                "Providing customized technical solutions based on client needs"
+            ]
+        }
+    ],
+    "portfolioSections": [
+        {
+            "id": "web-development",
+            "title": "Web Development",
+            "icon": "fas fa-globe",
+            "items": [
+                {
+                    "title": "IPC Patient Management System",
+                    "description": "Comprehensive system for managing medical facilities and patients",
+                    "type": "text",
+                    "content": "Developed a comprehensive system for managing medical facilities and patients using cutting-edge technologies. The system includes appointment management, patient records, billing, and medical reports with an intuitive interface for doctors and staff.",
+                    "technologies": [
+                        "Laravel",
+                        "PHP",
+                        "MySQL",
+                        "React"
+                    ],
+                    "year": "2023"
+                },
+                {
+                    "title": "Advanced E-commerce Platform",
+                    "description": "Complete online store with comprehensive management system",
+                    "type": "text",
+                    "content": "A sophisticated e-commerce platform supporting multiple payment methods, smart inventory management, membership system, and detailed sales reports. Features responsive design and high performance optimization.",
+                    "technologies": [
+                        "Laravel",
+                        "Vue.js",
+                        "Stripe API",
+                        "Redis"
+                    ],
+                    "year": "2023"
+                },
+                {
+                    "title": "Smart Real Estate Management System",
+                    "description": "Comprehensive platform for property and tenant management",
+                    "type": "text",
+                    "content": "An integrated real estate management system including property database, tenant management, payment tracking, property maintenance, and revenue reports with automated notifications.",
+                    "technologies": [
+                        "Laravel",
+                        "React",
+                        "MySQL",
+                        "Pusher"
+                    ],
+                    "year": "2022"
+                },
+                {
+                    "title": "Car Dealership Website",
+                    "description": "Integrated platform for car display and sales",
+                    "type": "text",
+                    "content": "A complete website for a car dealership including car display with photos and specifications, advanced search, inventory management system, and customer management with test drive appointment system.",
+                    "technologies": [
+                        "WordPress",
+                        "PHP",
+                        "MySQL",
+                        "Bootstrap"
+                    ],
+                    "year": "2022"
+                }
+            ]
+        },
+        {
+            "id": "ai-automation",
+            "title": "Artificial Intelligence",
+            "icon": "fas fa-robot",
+            "items": [
+                {
+                    "title": "Advanced Trading Automation Bot",
+                    "description": "Intelligent program for automated trading in financial markets",
+                    "type": "text",
+                    "content": "Developed an intelligent trading bot using advanced algorithms and historical data analysis to make automated trading decisions. Supports risk management and investment portfolio diversification.",
+                    "technologies": [
+                        "Python",
+                        "MQL4",
+                        "MetaTrader",
+                        "AI Algorithms"
+                    ],
+                    "year": "2024"
+                },
+                {
+                    "title": "OCR Text Recognition System",
+                    "description": "Smart tool for extracting text from images and documents",
+                    "type": "text",
+                    "content": "Developed an advanced text recognition system from images and scanned documents using artificial intelligence technologies. Supports multiple languages and converts documents to editable formats.",
+                    "technologies": [
+                        "Python",
+                        "Tesseract",
+                        "OpenCV",
+                        "TensorFlow"
+                    ],
+                    "year": "2024"
+                },
+                {
+                    "title": "Smart Customer Service Bot",
+                    "description": "Intelligent assistant for responding to customer inquiries",
+                    "type": "text",
+                    "content": "Developed an intelligent customer service bot using natural language processing to respond to common inquiries, route conversations to appropriate staff, and provide initial technical support.",
+                    "technologies": [
+                        "Python",
+                        "NLP",
+                        "Telegram API",
+                        "Machine Learning"
+                    ],
+                    "year": "2023"
+                },
+                {
+                    "title": "E-commerce Task Automation",
+                    "description": "Comprehensive automation solutions for e-commerce stores",
+                    "type": "text",
+                    "content": "Developed automation tools for inventory management, price updates, and automatic order processing in e-commerce stores. Includes competitor monitoring and automatic price adjustments.",
+                    "technologies": [
+                        "Python",
+                        "Selenium",
+                        "Playwright",
+                        "APIs"
+                    ],
+                    "year": "2023"
+                }
+            ]
+        },
+        {
+            "id": "data-analysis",
+            "title": "Data Analysis",
+            "icon": "fas fa-chart-line",
+            "items": [
+                {
+                    "title": "Sales Data Analysis System",
+                    "description": "Comprehensive analysis tool for sales and customer data",
+                    "type": "text",
+                    "content": "Developed an advanced sales data analysis system with interactive dashboards and detailed reports for business decision making. Includes customer behavior analysis and sales forecasting.",
+                    "technologies": [
+                        "Python",
+                        "Pandas",
+                        "Chart.js",
+                        "MySQL"
+                    ],
+                    "year": "2023"
+                },
+                {
+                    "title": "Market Trends Analysis Platform",
+                    "description": "Advanced tool for monitoring financial market trends",
+                    "type": "text",
+                    "content": "A comprehensive platform for financial data analysis and market trend monitoring using machine learning techniques. Provides accurate price predictions and market sentiment analysis.",
+                    "technologies": [
+                        "Python",
+                        "Plotly",
+                        "API Integration",
+                        "TensorFlow"
+                    ],
+                    "year": "2024"
+                },
+                {
+                    "title": "Website Performance Analysis System",
+                    "description": "Comprehensive tool for monitoring and analyzing website performance",
+                    "type": "text",
+                    "content": "An advanced system for monitoring website performance and analyzing visitor behavior. Provides detailed reports on loading speed, conversion rates, and user paths.",
+                    "technologies": [
+                        "Python",
+                        "Google Analytics API",
+                        "PostgreSQL",
+                        "Grafana"
+                    ],
+                    "year": "2023"
+                },
+                {
+                    "title": "Interactive Business Dashboard",
+                    "description": "Comprehensive dashboard for monitoring key performance indicators",
+                    "type": "text",
+                    "content": "Developed an interactive dashboard for displaying key performance indicators for businesses. Collects data from multiple sources and displays it with clear visual representations with export capabilities.",
+                    "technologies": [
+                        "React",
+                        "D3.js",
+                        "Node.js",
+                        "MongoDB"
+                    ],
+                    "year": "2022"
+                }
+            ]
+        }
+    ],
+    "skillCategories": {
+        "backend": "Backend & APIs",
+        "frontend": "Frontend",
+        "python": "Python & AI",
+        "trading": "Trading & Finance",
+        "tools": "Tools & Others"
+    },
+    "skills": {
+        "backend": [
+            "Laravel",
+            "PHP",
+            "MySQL",
+            "REST APIs"
+        ],
+        "frontend": [
+            "React",
+            "Tailwind CSS",
+            "Inertia.js"
+        ],
+        "python": [
+            "Python",
+            "Selenium",
+            "Playwright",
+            "AI Bots",
+            "Automation"
+        ],
+        "trading": [
+            "MQL4",
+            "MQL5",
+            "MetaTrader",
+            "Trading Algorithms"
+        ],
+        "tools": [
+            "WordPress",
+            "Git",
+            "SEO",
+            "CRM"
+        ]
+    },
+    "education": [
+        {
+            "degree": "Master's in Software Engineering",
+            "status": "Thesis Stage - 2022",
+            "color": "from-indigo-500 to-purple-600"
+        },
+        {
+            "degree": "Bachelor's in Computer Engineering",
+            "status": "2013 - 81% GPA",
+            "color": "from-blue-500 to-cyan-600"
+        },
+        {
+            "degree": "Continuous Self-Learning",
+            "status": "Udemy & Specialized Workshops since 2013",
+            "color": "from-green-500 to-teal-600"
+        }
+    ],
+    "languageSkills": [
+        {
+            "name": "Arabic",
+            "level": "Native",
+            "color": "bg-green-500"
+        },
+        {
+            "name": "English",
+            "level": "Very Good",
+            "color": "bg-blue-500"
+        }
+    ],
+    "specialFeatures": [
+        "Bilingual tech blogger",
+        "Passionate about automation and AI",
+        "Custom technical solutions design",
+        "Quick learner and developer"
+    ],
+    "footer": "© 2025 Ibrahim Alasaad - All Rights Reserved"
+}
