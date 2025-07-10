@@ -7,76 +7,112 @@
     <title>إبراهيم الأسعد - مهندس برمجيات</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-muted: rgba(255, 255, 255, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Cairo', 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+            background: var(--primary-gradient);
+            background-attachment: fixed;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
+        /* Enhanced Glass Effect */
         .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
+        .glass-effect-strong {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Modern Card Animations */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Enhanced Skills Tags */
         .skill-tag {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .skill-tag:hover::before {
+            left: 100%;
         }
 
         .skill-tag:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
+        /* Modern Experience Cards */
         .experience-card {
-            background: linear-gradient(135deg, #74b9ff, #0984e3);
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .experience-card:hover {
-            transform: translateX(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 200% 100%;
+            animation: gradient-slide 3s ease infinite;
         }
 
-        .project-card {
-            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: scale(1.02);
-        }
-
-        .floating-animation {
-            animation: float 8s ease-in-out infinite;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-5px);
-            }
-        }
-
-        .gradient-text {
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-shift 3s ease infinite;
-        }
-
-        @keyframes gradient-shift {
+        @keyframes gradient-slide {
 
             0%,
             100% {
@@ -88,9 +124,66 @@
             }
         }
 
+        .experience-card:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 15px 45px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Enhanced Floating Animation */
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            33% {
+                transform: translateY(-5px) rotate(0.5deg);
+            }
+
+            66% {
+                transform: translateY(-3px) rotate(-0.5deg);
+            }
+        }
+
+        /* Modern Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #f093fb);
+            background-size: 300% 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 4s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            25% {
+                background-position: 100% 50%;
+            }
+
+            50% {
+                background-position: 100% 100%;
+            }
+
+            75% {
+                background-position: 0% 100%;
+            }
+        }
+
+        /* Enhanced Section Titles */
         .section-title {
             position: relative;
-            padding-bottom: 5px;
+            padding-bottom: 8px;
         }
 
         .section-title::after {
@@ -98,66 +191,238 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            width: 30px;
-            height: 2px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
             border-radius: 2px;
+            animation: pulse-glow 2s ease-in-out infinite alternate;
         }
 
+        @keyframes pulse-glow {
+            from {
+                box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+            }
+
+            to {
+                box-shadow: 0 0 15px rgba(78, 205, 196, 0.8);
+            }
+        }
+
+        /* Modern Contact Items */
         .contact-item {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .contact-item:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-1px);
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
-        /* Tab Styles */
+        /* Enhanced Tab Styles */
         .tab-button {
-            background: rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-button::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            transition: width 0.3s ease;
         }
 
         .tab-button:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .tab-button:hover::before {
+            width: 100%;
         }
 
         .tab-button.active-tab {
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
         }
 
+        .tab-button.active-tab::before {
+            width: 100%;
+        }
+
+        /* Modern Portfolio Items */
         .portfolio-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .portfolio-item:hover::before {
+            left: 100%;
+        }
+
+        .portfolio-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Enhanced Tech Tags */
+        .tech-tag {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
 
-        .portfolio-item:hover {
+        .tech-tag:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        /* Enhanced About Cards */
+        .about-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: rotate 4s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .about-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .about-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Enhanced Stats Cards */
+        .stats-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stats-card:hover {
+            transform: scale(1.1) rotateY(10deg);
             background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-1px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .tech-tag {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+        /* Language Toggle Enhancement */
+        .language-toggle {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-toggle:hover {
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .language-button {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .language-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .language-button:hover::before {
+            left: 100%;
+        }
+
+        .language-button.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 9999px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
+        .language-button:not(.active) {
+            color: var(--text-muted);
+        }
+
+        .language-button:not(.active):hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Enhanced Video Container */
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .video-container iframe {
@@ -166,78 +431,133 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border-radius: 12px;
         }
 
-        /* About Me Section Styles */
-        .about-card {
-            transition: all 0.3s ease;
-        }
-
-        .about-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .stats-card {
-            transition: all 0.3s ease;
-        }
-
-        .stats-card:hover {
-            transform: scale(1.05);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .philosophy-quote {
+        /* Enhanced Avatar */
+        .avatar-container {
             position: relative;
-            padding: 1rem;
         }
 
-        .philosophy-quote::before {
-            content: '"';
+        .avatar-container::before {
+            content: '';
             position: absolute;
-            top: -10px;
-            right: -5px;
-            font-size: 4rem;
-            color: rgba(255, 255, 255, 0.2);
-            font-family: serif;
+            inset: -3px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f093fb);
+            border-radius: 50%;
+            background-size: 200% 200%;
+            animation: gradient-shift 3s ease infinite;
+            z-index: -1;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+        }
+
+        /* Responsive Enhancements */
+        @media (max-width: 768px) {
+            .floating-animation {
+                animation: none;
+            }
+
+            .card-hover:hover {
+                transform: translateY(-4px);
+            }
+
+            .experience-card:hover {
+                transform: translateX(-2px);
+            }
+        }
+
+        /* Loading Animation */
+        .loading-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
         }
     </style>
 </head>
 
 <body class="text-white">
     <div class="min-h-screen p-1">
+        <!-- Language Toggle -->
+        <div class="fixed top-4 left-4 z-50">
+            <div class="language-toggle rounded-xl p-1 flex gap-1">
+                <button class="language-button active px-4 py-2 rounded-lg text-sm font-medium" data-lang="ar">
+                    <i class="fas fa-globe mr-2"></i>
+                    العربية
+                </button>
+                <button class="language-button px-4 py-2 rounded-lg text-sm font-medium" data-lang="en">
+                    <i class="fas fa-globe mr-2"></i>
+                    English
+                </button>
+            </div>
+        </div>
+
         <!-- Header Section -->
         <div class="max-w-7xl mx-auto">
-            <div class="glass-effect rounded-xl p-2 mb-2 floating-animation">
-                <div class="flex flex-col lg:flex-row items-center gap-2">
-                    <div class="relative">
-                        <div class="w-14 h-14 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 p-1">
+            <div class="glass-effect-strong rounded-2xl p-4 mb-4 floating-animation card-hover">
+                <div class="flex flex-col lg:flex-row items-center gap-4">
+                    <div class="avatar-container relative">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 p-1">
                             <div
-                                class="w-full h-full rounded-full bg-gray-800 flex items-center justify-center text-lg font-bold">
+                                class="w-full h-full rounded-full bg-gray-800 flex items-center justify-center text-xl font-bold">
                                 إ.أ
                             </div>
                         </div>
                         <div
-                            class="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full flex items-center justify-center">
+                            class="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full flex items-center justify-center border-2 border-white">
                             <i class="fas fa-check text-white text-xs"></i>
                         </div>
                     </div>
                     <div class="text-center lg:text-right flex-1">
-                        <h1 class="text-xl lg:text-2xl font-bold mb-0.5 gradient-text">إبراهيم الأسعد</h1>
-                        <p class="text-sm text-gray-200 mb-1">مهندس برمجيات – مطور ويب وذكاء اصطناعي</p>
-                        <div class="flex flex-wrap gap-1 justify-center lg:justify-end text-xs">
-                            <div class="contact-item rounded-full px-2 py-0.5 flex items-center gap-1">
+                        <h1 class="text-3xl lg:text-4xl font-bold mb-2 gradient-text" id="name-display">إبراهيم الأسعد
+                        </h1>
+                        <p class="text-lg text-gray-200 mb-3 font-medium" id="title-display">مهندس برمجيات – مطور ويب
+                            وذكاء
+                            اصطناعي</p>
+                        <div class="flex flex-wrap gap-2 justify-center lg:justify-end text-sm">
+                            <div class="contact-item rounded-full px-3 py-2 flex items-center gap-2">
                                 <i class="fas fa-envelope text-blue-300"></i>
-                                <span>eng.ebrahim.alasaad.1990@gmail.com</span>
+                                <span id="email-display">eng.ebrahim.alasaad.1990@gmail.com</span>
                             </div>
-                            <div class="contact-item rounded-full px-2 py-0.5 flex items-center gap-1">
+                            <div class="contact-item rounded-full px-3 py-2 flex items-center gap-2">
                                 <i class="fas fa-phone text-green-300"></i>
-                                <a href="https://wa.me/352681589097" target="_blank"
-                                    class="hover:text-green-200">whatsapp 352681589097</a>
+                                <a href="https://wa.me/352681589097" target="_blank" class="hover:text-green-200"
+                                    id="phone-display">whatsapp 352681589097</a>
                             </div>
-                            <div class="contact-item rounded-full px-2 py-0.5 flex items-center gap-1">
+                            <div class="contact-item rounded-full px-3 py-2 flex items-center gap-2">
                                 <i class="fas fa-map-marker-alt text-red-300"></i>
-                                <span>سوريا - إدلب - سرمدا الجديدة</span>
+                                <span id="location-display">سوريا - إدلب - سرمدا الجديدة</span>
                             </div>
                         </div>
                     </div>
@@ -245,342 +565,77 @@
             </div>
 
             <!-- About Me Section -->
-            <div class="glass-effect rounded-xl p-2 mb-2">
-                <h2 class="text-sm font-bold mb-2 section-title text-center">🌟 من أنا</h2>
-                <div class="grid lg:grid-cols-4 gap-2">
-                    <div class="about-card bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg p-2">
-                        <h3 class="text-xs font-bold text-white mb-1 flex items-center gap-1">
-                            <i class="fas fa-graduation-cap text-yellow-300"></i>
-                            الخلفية الأكاديمية
-                        </h3>
-                        <div class="text-purple-100 space-y-0.5 text-xs">
-                            <p class="flex items-center gap-1">
-                                <i class="fas fa-star text-yellow-400"></i>
-                                ماجستير ذكاء اصطناعي
-                            </p>
-                            <p class="flex items-center gap-1">
-                                <i class="fas fa-trophy text-yellow-400"></i>
-                                هندسة حواسيب - معدل 81%
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="about-card bg-gradient-to-r from-green-600 to-teal-600 rounded-lg p-2">
-                        <h3 class="text-xs font-bold text-white mb-1 flex items-center gap-1">
-                            <i class="fas fa-heart text-red-300"></i>
-                            الشغف والرؤية
-                        </h3>
-                        <div class="text-green-100 space-y-0.5 text-xs">
-                            <p class="flex items-start gap-1">
-                                <i class="fas fa-lightbulb text-yellow-400 mt-0.5"></i>
-                                التعلم الذاتي والابتكار
-                            </p>
-                            <p class="flex items-start gap-1">
-                                <i class="fas fa-tools text-blue-300 mt-0.5"></i>
-                                تطوير أدوات مفيدة
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="about-card bg-gradient-to-r from-orange-500 to-red-500 rounded-lg p-2">
-                        <h3 class="text-xs font-bold text-white mb-1 flex items-center gap-1">
-                            <i class="fas fa-rocket text-yellow-300"></i>
-                            الطموحات
-                        </h3>
-                        <div class="text-orange-100 space-y-0.5 text-xs">
-                            <p class="flex items-start gap-1">
-                                <i class="fas fa-check-circle text-green-400 mt-0.5"></i>
-                                حلول تقنية مبتكرة
-                            </p>
-                            <p class="flex items-start gap-1">
-                                <i class="fas fa-check-circle text-green-400 mt-0.5"></i>
-                                أنظمة ذكية بالـ AI
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="about-card bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg p-2">
-                        <h3 class="text-xs font-bold text-white mb-1 flex items-center gap-1">
-                            <i class="fas fa-code text-green-300"></i>
-                            فلسفة البرمجة
-                        </h3>
-                        <div class="text-indigo-100 text-xs italic">
-                            "البرمجة فن حل المشكلات وإبداع حلول تجعل العالم أفضل"
-                        </div>
-                    </div>
+            <div class="glass-effect-strong rounded-2xl p-4 mb-4 card-hover">
+                <h2 class="text-xl font-bold mb-4 section-title text-center" id="about-title">🌟 من أنا</h2>
+                <div class="grid lg:grid-cols-4 gap-4" id="about-cards">
+                    <!-- About cards will be loaded dynamically -->
                 </div>
 
                 <!-- Stats Cards -->
-                <div class="grid grid-cols-4 gap-1 mt-2">
-                    <div class="stats-card bg-white bg-opacity-10 rounded-lg p-1 text-center">
-                        <div class="text-sm font-bold text-blue-300">7+</div>
-                        <div class="text-xs text-gray-300">سنوات خبرة</div>
-                    </div>
-                    <div class="stats-card bg-white bg-opacity-10 rounded-lg p-1 text-center">
-                        <div class="text-sm font-bold text-green-300">50+</div>
-                        <div class="text-xs text-gray-300">مشروع</div>
-                    </div>
-                    <div class="stats-card bg-white bg-opacity-10 rounded-lg p-1 text-center">
-                        <div class="text-sm font-bold text-purple-300">10+</div>
-                        <div class="text-xs text-gray-300">تقنية</div>
-                    </div>
-                    <div class="stats-card bg-white bg-opacity-10 rounded-lg p-1 text-center">
-                        <div class="text-sm font-bold text-yellow-300">100%</div>
-                        <div class="text-xs text-gray-300">جودة</div>
-                    </div>
+                <div class="grid grid-cols-4 gap-3 mt-4" id="stats-container">
+                    <!-- Stats will be loaded dynamically -->
                 </div>
             </div>
 
             <!-- Main Content Grid -->
-            <div class="grid lg:grid-cols-3 gap-2">
+            <div class="grid lg:grid-cols-3 gap-4">
                 <!-- Experience Section - 33% -->
-                <div class="glass-effect rounded-xl p-2">
-                    <h2 class="text-sm font-bold mb-2 section-title">💼 الخبرات المهنية</h2>
-                    <div class="space-y-2">
-                        <div class="experience-card rounded-lg p-2 text-white">
-                            <div class="flex justify-between items-start mb-1">
-                                <h3 class="text-xs font-bold">Laravel Developer</h3>
-                                <span class="bg-white bg-opacity-20 px-1 py-0.5 rounded-full text-xs">2021 – 2025</span>
-                            </div>
-                            <p class="text-blue-100 mb-0.5 text-xs">الأيادي الخضراء | SAMS | SRD</p>
-                            <ul class="text-xs space-y-0.5 text-blue-50">
-                                <li>• طورت نظام IPC لإدارة المنشآت الطبية والمرضى</li>
-                                <li>• شاركت في تطوير نظام معلومات لمنشآت SAMS</li>
-                            </ul>
-                        </div>
-
-                        <div class="experience-card rounded-lg p-2 text-white">
-                            <div class="flex justify-between items-start mb-1">
-                                <h3 class="text-xs font-bold">مطور بوتات تداول</h3>
-                                <span class="bg-white bg-opacity-20 px-1 py-0.5 rounded-full text-xs">2024 – الآن</span>
-                            </div>
-                            <p class="text-blue-100 mb-0.5 text-xs">مطور مستقل</p>
-                            <ul class="text-xs space-y-0.5 text-blue-50">
-                                <li>• تطوير بوتات تداول MQ5 و MQ4 بخوارزمية رياضية من تأليفي</li>
-                                <li>• تحليل تقني متقدم وإشارات تداول ذكية</li>
-                            </ul>
-                        </div>
-
-                        <div class="experience-card rounded-lg p-2 text-white">
-                            <div class="flex justify-between items-start mb-1">
-                                <h3 class="text-xs font-bold">مدرس ومشرف مشاريع تخرج</h3>
-                                <span class="bg-white bg-opacity-20 px-1 py-0.5 rounded-full text-xs">2020</span>
-                            </div>
-                            <p class="text-blue-100 mb-0.5 text-xs">جامعة شام - اعزاز</p>
-                            <ul class="text-xs space-y-0.5 text-blue-50">
-                                <li>• تدريس مقررات علوم الحاسوب والبرمجة</li>
-                                <li>• الإشراف على مشاريع تخرج الطلاب</li>
-                            </ul>
-                        </div>
-
-                        <div class="experience-card rounded-lg p-2 text-white">
-                            <div class="flex justify-between items-start mb-1">
-                                <h3 class="text-xs font-bold">مسؤول معلومات</h3>
-                                <span class="bg-white bg-opacity-20 px-1 py-0.5 rounded-full text-xs">2018 – 2021</span>
-                            </div>
-                            <p class="text-blue-100 mb-0.5 text-xs">Midmar</p>
-                            <ul class="text-xs space-y-0.5 text-blue-50">
-                                <li>• بناء أنظمة رقمية لإدارة المعلومات</li>
-                                <li>• تطوير أدوات Python لمعالجة قواعد بيانات ضخمة</li>
-                            </ul>
-                        </div>
-
-                        <div class="experience-card rounded-lg p-2 text-white">
-                            <div class="flex justify-between items-start mb-1">
-                                <h3 class="text-xs font-bold">مدرس معلوماتية</h3>
-                                <span class="bg-white bg-opacity-20 px-1 py-0.5 rounded-full text-xs">2018</span>
-                            </div>
-                            <p class="text-blue-100 mb-0.5 text-xs">جامعة الشمال</p>
-                            <ul class="text-xs space-y-0.5 text-blue-50">
-                                <li>• تدريس مقررات المعلوماتية والحاسوب</li>
-                                <li>• إعداد المناهج التعليمية للطلاب</li>
-                            </ul>
-                        </div>
-
-                        <div class="experience-card rounded-lg p-2 text-white">
-                            <div class="flex justify-between items-start mb-1">
-                                <h3 class="text-xs font-bold">مطور ويب حر</h3>
-                                <span class="bg-white bg-opacity-20 px-1 py-0.5 rounded-full text-xs">2017 – الآن</span>
-                            </div>
-                            <p class="text-blue-100 mb-0.5 text-xs">Freelancer</p>
-                            <ul class="text-xs space-y-0.5 text-blue-50">
-                                <li>• تنفيذ مشاريع على منصات: مستقل، Upwork</li>
-                                <li>• تطوير مواقع باستخدام Laravel، WordPress، React</li>
-                            </ul>
-                        </div>
+                <div class="glass-effect-strong rounded-2xl p-4 card-hover">
+                    <h2 class="text-xl font-bold mb-4 section-title" id="experience-title">💼 الخبرات المهنية</h2>
+                    <div id="experience-container" class="space-y-3">
+                        <!-- Experience data will be loaded here from JSON -->
                     </div>
                 </div>
 
                 <!-- Portfolio Section - 33% -->
-                <div class="glass-effect rounded-xl p-2">
-                    <h2 class="text-sm font-bold mb-2 section-title">💼 نماذج الأعمال</h2>
+                <div class="glass-effect-strong rounded-2xl p-4 card-hover">
+                    <h2 class="text-xl font-bold mb-4 section-title" id="portfolio-title">💼 نماذج الأعمال</h2>
 
                     <!-- Tab Navigation -->
-                    <div class="flex flex-wrap gap-1 mb-2 border-b border-white border-opacity-20">
-                        <button
-                            class="tab-button active-tab px-2 py-0.5 rounded-t-lg text-xs font-medium transition-all duration-300"
-                            data-tab="web-development">
-                            <i class="fas fa-globe mr-1"></i>
-                            تطوير الويب
-                        </button>
-                        <button
-                            class="tab-button px-2 py-0.5 rounded-t-lg text-xs font-medium transition-all duration-300"
-                            data-tab="ai-automation">
-                            <i class="fas fa-robot mr-1"></i>
-                            الذكاء الاصطناعي
-                        </button>
-                        <button
-                            class="tab-button px-2 py-0.5 rounded-t-lg text-xs font-medium transition-all duration-300"
-                            data-tab="data-analysis">
-                            <i class="fas fa-chart-line mr-1"></i>
-                            تحليل البيانات
-                        </button>
+                    <div class="flex flex-wrap gap-2 mb-4 border-b border-white border-opacity-20 pb-2"
+                        id="portfolio-tabs">
+                        <!-- Tabs will be loaded dynamically -->
                     </div>
 
                     <!-- Tab Content -->
-                    <div id="portfolio-content" class="min-h-[120px]">
+                    <div id="portfolio-content" class="min-h-[150px]">
                         <!-- Content will be loaded here -->
                     </div>
                 </div>
 
                 <!-- Right Column - Skills and Other Sections -->
-                <div class="space-y-2">
+                <div class="space-y-4">
                     <!-- Skills Section -->
-                    <div class="glass-effect rounded-xl p-2">
-                        <h2 class="text-sm font-bold mb-2 section-title">🛠️ المهارات التقنية</h2>
-                        <div class="space-y-2">
-                            <div>
-                                <h3 class="font-semibold mb-1 text-yellow-300 text-xs">Backend & APIs</h3>
-                                <div class="flex flex-wrap gap-1">
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">Laravel</span>
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">PHP</span>
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">MySQL</span>
-                                    <span class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">REST
-                                        APIs</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h3 class="font-semibold mb-1 text-green-300 text-xs">Frontend</h3>
-                                <div class="flex flex-wrap gap-1">
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">React</span>
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">Tailwind
-                                        CSS</span>
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">Inertia.js</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h3 class="font-semibold mb-1 text-blue-300 text-xs">Python & AI</h3>
-                                <div class="flex flex-wrap gap-1">
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">Python</span>
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">Selenium</span>
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">Playwright</span>
-                                    <span class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">AI
-                                        Bots</span>
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">Automation</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h3 class="font-semibold mb-1 text-purple-300 text-xs">Trading & Finance</h3>
-                                <div class="flex flex-wrap gap-1">
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">MQL4</span>
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">MQL5</span>
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">MetaTrader</span>
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">Trading
-                                        Algorithms</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h3 class="font-semibold mb-1 text-orange-300 text-xs">Tools & Others</h3>
-                                <div class="flex flex-wrap gap-1">
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">WordPress</span>
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">Git</span>
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">SEO</span>
-                                    <span
-                                        class="skill-tag px-1 py-0.5 rounded-full text-xs font-medium text-white">CRM</span>
-                                </div>
-                            </div>
+                    <div class="glass-effect-strong rounded-2xl p-4 card-hover">
+                        <h2 class="text-xl font-bold mb-4 section-title" id="skills-title">🛠️ المهارات التقنية</h2>
+                        <div class="space-y-3" id="skills-container">
+                            <!-- Skills will be loaded dynamically -->
                         </div>
                     </div>
 
-                    <!-- Education, Languages, and Features in one row -->
-                    <div class="grid grid-cols-1 gap-2">
+                    <!-- Education, Languages, and Features in one column -->
+                    <div class="grid grid-cols-1 gap-4">
                         <!-- Education Section -->
-                        <div class="glass-effect rounded-xl p-2">
-                            <h2 class="text-sm font-bold mb-2 section-title">🎓 التعليم</h2>
-                            <div class="space-y-1">
-                                <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg p-1">
-                                    <h3 class="font-bold text-white text-xs">ماجستير هندسة برمجيات</h3>
-                                    <p class="text-indigo-100 text-xs">مرحلة الرسالة - 2022</p>
-                                </div>
-                                <div class="bg-gradient-to-r from-blue-500 to-cyan-600 rounded-lg p-1">
-                                    <h3 class="font-bold text-white text-xs">بكالوريوس هندسة حواسيب</h3>
-                                    <p class="text-blue-100 text-xs">2013 - معدل 81%</p>
-                                </div>
-                                <div class="bg-gradient-to-r from-green-500 to-teal-600 rounded-lg p-1">
-                                    <h3 class="font-bold text-white text-xs">تعلم ذاتي مستمر</h3>
-                                    <p class="text-green-100 text-xs">Udemy وورشات متخصصة منذ 2013</p>
-                                </div>
+                        <div class="glass-effect rounded-2xl p-4 card-hover">
+                            <h2 class="text-lg font-bold mb-3 section-title" id="education-title">🎓 التعليم</h2>
+                            <div class="space-y-2" id="education-container">
+                                <!-- Education will be loaded dynamically -->
                             </div>
                         </div>
 
                         <!-- Languages Section -->
-                        <div class="glass-effect rounded-xl p-2">
-                            <h2 class="text-sm font-bold mb-2 section-title">🗣️ اللغات</h2>
-                            <div class="space-y-1">
-                                <div class="flex justify-between items-center">
-                                    <span class="font-medium text-xs">العربية</span>
-                                    <span class="bg-green-500 text-white px-1 py-0.5 rounded-full text-xs">اللغة
-                                        الأم</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="font-medium text-xs">الإنجليزية</span>
-                                    <span class="bg-blue-500 text-white px-1 py-0.5 rounded-full text-xs">جيد
-                                        جداً</span>
-                                </div>
+                        <div class="glass-effect rounded-2xl p-4 card-hover">
+                            <h2 class="text-lg font-bold mb-3 section-title" id="languages-title">🗣️ اللغات</h2>
+                            <div class="space-y-2" id="languages-container">
+                                <!-- Languages will be loaded dynamically -->
                             </div>
                         </div>
 
                         <!-- Special Features -->
-                        <div class="glass-effect rounded-xl p-2">
-                            <h2 class="text-sm font-bold mb-2 section-title">✨ مميزات إضافية</h2>
-                            <div class="space-y-1">
-                                <div class="flex items-center gap-1 p-1 bg-white bg-opacity-10 rounded-lg">
-                                    <i class="fas fa-blog text-orange-400"></i>
-                                    <span class="text-xs">مدون تقني بلغتين</span>
-                                </div>
-                                <div class="flex items-center gap-1 p-1 bg-white bg-opacity-10 rounded-lg">
-                                    <i class="fas fa-cogs text-blue-400"></i>
-                                    <span class="text-xs">شغوف بالأتمتة والذكاء الاصطناعي</span>
-                                </div>
-                                <div class="flex items-center gap-1 p-1 bg-white bg-opacity-10 rounded-lg">
-                                    <i class="fas fa-lightbulb text-yellow-400"></i>
-                                    <span class="text-xs">تصميم حلول تقنية مخصصة</span>
-                                </div>
-                                <div class="flex items-center gap-1 p-1 bg-white bg-opacity-10 rounded-lg">
-                                    <i class="fas fa-rocket text-purple-400"></i>
-                                    <span class="text-xs">سريع التعلم والتطوير</span>
-                                </div>
+                        <div class="glass-effect rounded-2xl p-4 card-hover">
+                            <h2 class="text-lg font-bold mb-3 section-title" id="features-title">✨ مميزات إضافية</h2>
+                            <div class="space-y-2" id="features-container">
+                                <!-- Features will be loaded dynamically -->
                             </div>
                         </div>
                     </div>
@@ -588,68 +643,285 @@
             </div>
 
             <!-- Footer -->
-            <div class="glass-effect rounded-xl p-2 mt-2 text-center">
-                <div class="flex justify-center items-center gap-2 mb-1">
+            <div class="glass-effect-strong rounded-2xl p-4 mt-4 text-center card-hover">
+                <div class="flex justify-center items-center gap-4 mb-3">
                     <a href="https://www.linkedin.com/in/ibrahim-alasaad-034553114/"
-                        class="bg-blue-600 hover:bg-blue-700 p-1 rounded-full transition-all duration-300 hover:scale-110">
-                        <i class="fab fa-linkedin-in text-xs"></i>
+                        class="bg-blue-600 hover:bg-blue-700 p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg">
+                        <i class="fab fa-linkedin-in text-lg"></i>
                     </a>
                     <a href="mailto:eng.ebrahim.alasaad.1990@gmail.com"
-                        class="bg-red-500 hover:bg-red-600 p-1 rounded-full transition-all duration-300 hover:scale-110">
-                        <i class="fas fa-envelope text-xs"></i>
+                        class="bg-red-500 hover:bg-red-600 p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg">
+                        <i class="fas fa-envelope text-lg"></i>
                     </a>
                     <a href="tel:+352681589097"
-                        class="bg-green-500 hover:bg-green-600 p-1 rounded-full transition-all duration-300 hover:scale-110">
-                        <i class="fas fa-phone text-xs"></i>
+                        class="bg-green-500 hover:bg-green-600 p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg">
+                        <i class="fas fa-phone text-lg"></i>
                     </a>
                 </div>
-                <p class="text-gray-300 text-xs">© 2025 إبراهيم الأسعد - جميع الحقوق محفوظة</p>
+                <p class="text-gray-300" id="footer-text">© 2025 إبراهيم الأسعد - جميع الحقوق محفوظة</p>
             </div>
         </div>
     </div>
 
     <script>
-        // Portfolio data will be loaded from JSON file
-        let portfolioData = {};
+        // Global variables
+        let currentData = {};
+        let currentLanguage = 'ar';
 
-        // Load portfolio data from JSON file
-        async function loadPortfolioData() {
+        // Get language from URL parameter
+        function getLanguageFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+            return langParam && ['ar', 'en'].includes(langParam) ? langParam : 'ar';
+        }
+
+        // Update URL with language parameter
+        function updateURL(language) {
+            const url = new URL(window.location);
+            url.searchParams.set('lang', language);
+            window.history.pushState({ language }, '', url);
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(event) {
+            const language = getLanguageFromURL();
+            if (language !== currentLanguage) {
+                switchLanguage(language, false); // false to prevent updating URL again
+            }
+        });
+
+        // Load data for specific language
+        async function loadLanguageData(language) {
             try {
-                const response = await fetch('./portfolio-data.json');
+                const response = await fetch(`./data-${language}.json`);
                 const data = await response.json();
-                portfolioData = data;
+                currentData = data;
+                currentLanguage = language;
 
-                // Load the first tab by default
-                if (data.portfolioSections && data.portfolioSections.length > 0) {
-                    showTab(data.portfolioSections[0].id);
-                }
+                // Update HTML attributes
+                document.documentElement.setAttribute('lang', language);
+                document.documentElement.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+                document.title = `${data.personalInfo.name} - ${data.personalInfo.title.split(' – ')[0]}`;
+
+                // Update all content
+                updatePersonalInfo();
+                updateSectionTitles();
+                updateAboutSection();
+                updateExperienceSection();
+                updatePortfolioSection();
+                updateSkillsSection();
+                updateEducationSection();
+                updateLanguagesSection();
+                updateFeaturesSection();
+                updateFooter();
+
+                return true;
             } catch (error) {
-                console.error('Error loading portfolio data:', error);
-                // Fallback data in case JSON file is not available
-                portfolioData = {
-                    portfolioSections: [
-                        {
-                            id: "web-development",
-                            title: "تطوير الويب",
-                            icon: "fas fa-globe",
-                            items: [
-                                {
-                                    title: "نظام إدارة المرضى IPC",
-                                    description: "نظام شامل لإدارة المنشآت الطبية والمرضى",
-                                    type: "text",
-                                    content: "تم تطوير نظام شامل لإدارة المنشآت الطبية والمرضى باستخدام أحدث التقنيات",
-                                    technologies: ["Laravel", "PHP", "MySQL"],
-                                    year: "2023"
-                                }
-                            ]
-                        }
-                    ]
-                };
-                showTab('web-development');
+                console.error('Error loading language data:', error);
+                return false;
             }
         }
 
-        // Show specific tab content
+        // Update personal information
+        function updatePersonalInfo() {
+            document.getElementById('name-display').textContent = currentData.personalInfo.name;
+            document.getElementById('title-display').textContent = currentData.personalInfo.title;
+            document.getElementById('email-display').textContent = currentData.personalInfo.email;
+            document.getElementById('phone-display').textContent = currentData.personalInfo.phone;
+            document.getElementById('location-display').textContent = currentData.personalInfo.location;
+        }
+
+        // Update section titles
+        function updateSectionTitles() {
+            document.getElementById('about-title').textContent = currentData.sections.aboutMe;
+            document.getElementById('experience-title').textContent = currentData.sections.experience;
+            document.getElementById('portfolio-title').textContent = currentData.sections.portfolio;
+            document.getElementById('skills-title').textContent = currentData.sections.skills;
+            document.getElementById('education-title').textContent = currentData.sections.education;
+            document.getElementById('languages-title').textContent = currentData.sections.languages;
+            document.getElementById('features-title').textContent = currentData.sections.features;
+        }
+
+        // Update about section
+        function updateAboutSection() {
+            const aboutCards = document.getElementById('about-cards');
+            const statsContainer = document.getElementById('stats-container');
+
+            // About cards
+            const cards = currentData.aboutMeCards;
+            aboutCards.innerHTML = `
+                <div class="about-card bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg p-2">
+                    <h3 class="text-sm font-bold text-white mb-1 flex items-center gap-1">
+                        <i class="fas fa-graduation-cap text-yellow-300"></i>
+                        ${cards.academic.title}
+                    </h3>
+                    <div class="text-purple-100 space-y-0.5 text-sm">
+                        ${cards.academic.items.map(item => `
+                            <p class="flex items-center gap-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                ${item}
+                            </p>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="about-card bg-gradient-to-r from-green-600 to-teal-600 rounded-lg p-2">
+                    <h3 class="text-sm font-bold text-white mb-1 flex items-center gap-1">
+                        <i class="fas fa-heart text-red-300"></i>
+                        ${cards.passion.title}
+                    </h3>
+                    <div class="text-green-100 space-y-0.5 text-sm">
+                        ${cards.passion.items.map(item => `
+                            <p class="flex items-start gap-1">
+                                <i class="fas fa-lightbulb text-yellow-400 mt-0.5"></i>
+                                ${item}
+                            </p>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="about-card bg-gradient-to-r from-orange-500 to-red-500 rounded-lg p-2">
+                    <h3 class="text-sm font-bold text-white mb-1 flex items-center gap-1">
+                        <i class="fas fa-rocket text-yellow-300"></i>
+                        ${cards.ambitions.title}
+                    </h3>
+                    <div class="text-orange-100 space-y-0.5 text-sm">
+                        ${cards.ambitions.items.map(item => `
+                            <p class="flex items-start gap-1">
+                                <i class="fas fa-check-circle text-green-400 mt-0.5"></i>
+                                ${item}
+                            </p>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="about-card bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg p-2">
+                    <h3 class="text-sm font-bold text-white mb-1 flex items-center gap-1">
+                        <i class="fas fa-code text-green-300"></i>
+                        ${cards.philosophy.title}
+                    </h3>
+                    <div class="text-indigo-100 text-sm italic">
+                        "${cards.philosophy.content}"
+                    </div>
+                </div>
+            `;
+
+            // Stats
+            statsContainer.innerHTML = currentData.stats.map(stat => `
+                <div class="stats-card bg-white bg-opacity-10 rounded-lg p-1 text-center">
+                    <div class="text-lg font-bold text-blue-300">${stat.value}</div>
+                    <div class="text-sm text-gray-300">${stat.label}</div>
+                </div>
+            `).join('');
+        }
+
+        // Update experience section
+        function updateExperienceSection() {
+            const experienceContainer = document.getElementById('experience-container');
+
+            experienceContainer.innerHTML = currentData.experiences.map(experience => `
+                <div class="experience-card rounded-lg p-2 text-white">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-sm font-bold">${experience.title}</h3>
+                        <span class="bg-white bg-opacity-20 px-1 py-0.5 rounded-full text-sm">${experience.period}</span>
+                    </div>
+                    <p class="text-blue-100 mb-0.5 text-sm">${experience.company}</p>
+                    <ul class="text-sm space-y-0.5 text-blue-50">
+                        ${experience.responsibilities.map(responsibility => `<li>• ${responsibility}</li>`).join('')}
+                    </ul>
+                </div>
+            `).join('');
+        }
+
+        // Update portfolio section
+        function updatePortfolioSection() {
+            const portfolioTabs = document.getElementById('portfolio-tabs');
+
+            // Generate tabs
+            portfolioTabs.innerHTML = currentData.portfolioSections.map((section, index) => `
+                <button
+                    class="tab-button ${index === 0 ? 'active-tab' : ''} px-2 py-0.5 rounded-t-lg text-sm font-medium transition-all duration-300"
+                    data-tab="${section.id}">
+                    <i class="${section.icon} mr-1"></i>
+                    ${section.title}
+                </button>
+            `).join('');
+
+            // Show first tab by default
+            if (currentData.portfolioSections.length > 0) {
+                showTab(currentData.portfolioSections[0].id);
+            }
+
+            // Add click listeners to tabs
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.addEventListener('click', function () {
+                    const tabId = this.getAttribute('data-tab');
+                    showTab(tabId);
+                });
+            });
+        }
+
+        // Update skills section
+        function updateSkillsSection() {
+            const skillsContainer = document.getElementById('skills-container');
+            const skills = currentData.skills;
+            const categories = currentData.skillCategories;
+
+            const colors = ['yellow-300', 'green-300', 'blue-300', 'purple-300', 'orange-300'];
+
+            skillsContainer.innerHTML = Object.keys(skills).map((key, index) => `
+                <div>
+                    <h3 class="font-semibold mb-1 text-${colors[index]} text-sm">${categories[key]}</h3>
+                    <div class="flex flex-wrap gap-1">
+                        ${skills[key].map(skill => `
+                            <span class="skill-tag px-1 py-0.5 rounded-full text-sm font-medium text-white">${skill}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Update education section
+        function updateEducationSection() {
+            const educationContainer = document.getElementById('education-container');
+
+            educationContainer.innerHTML = currentData.education.map(edu => `
+                <div class="bg-gradient-to-r ${edu.color} rounded-lg p-1">
+                    <h3 class="font-bold text-white text-sm">${edu.degree}</h3>
+                    <p class="text-blue-100 text-sm">${edu.status}</p>
+                </div>
+            `).join('');
+        }
+
+        // Update languages section
+        function updateLanguagesSection() {
+            const languagesContainer = document.getElementById('languages-container');
+
+            languagesContainer.innerHTML = currentData.languageSkills.map(lang => `
+                <div class="flex justify-between items-center">
+                    <span class="font-medium text-sm">${lang.name}</span>
+                    <span class="${lang.color} text-white px-1 py-0.5 rounded-full text-sm">${lang.level}</span>
+                </div>
+            `).join('');
+        }
+
+        // Update features section
+        function updateFeaturesSection() {
+            const featuresContainer = document.getElementById('features-container');
+            const icons = ['fa-blog', 'fa-cogs', 'fa-lightbulb', 'fa-rocket'];
+            const colors = ['orange-400', 'blue-400', 'yellow-400', 'purple-400'];
+
+            featuresContainer.innerHTML = currentData.specialFeatures.map((feature, index) => `
+                <div class="flex items-center gap-1 p-1 bg-white bg-opacity-10 rounded-lg">
+                    <i class="fas ${icons[index]} text-${colors[index]}"></i>
+                    <span class="text-sm">${feature}</span>
+                </div>
+            `).join('');
+        }
+
+        // Update footer
+        function updateFooter() {
+            document.getElementById('footer-text').textContent = currentData.footer;
+        }
+
+        // Show specific tab content (existing function, no changes needed)
         function showTab(tabId) {
             // Update active tab button
             document.querySelectorAll('.tab-button').forEach(btn => {
@@ -660,7 +932,7 @@
             });
 
             // Find the section data
-            const section = portfolioData.portfolioSections.find(s => s.id === tabId);
+            const section = currentData.portfolioSections.find(s => s.id === tabId);
             if (!section) return;
 
             // Generate content HTML
@@ -668,7 +940,7 @@
             document.getElementById('portfolio-content').innerHTML = content;
         }
 
-        // Generate HTML content for a tab
+        // Generate HTML content for a tab (existing function, no changes needed)
         function generateTabContent(section) {
             return section.items.map(item => {
                 let mediaContent = '';
@@ -686,7 +958,7 @@
                 } else if (item.type === 'text' && item.content) {
                     mediaContent = `
                         <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg p-2 mb-1">
-                            <div class="text-white text-xs whitespace-pre-line">${item.content}</div>
+                            <div class="text-white text-sm whitespace-pre-line">${item.content}</div>
                         </div>
                     `;
                 }
@@ -697,30 +969,60 @@
                 return `
                     <div class="portfolio-item rounded-lg p-2 mb-2">
                         <div class="flex justify-between items-start mb-1">
-                            <h3 class="text-xs font-bold text-white">${item.title}</h3>
-                            <span class="bg-white bg-opacity-20 px-1 py-0.5 rounded-full text-xs text-white">${item.year}</span>
+                            <h3 class="text-sm font-bold text-white">${item.title}</h3>
+                            <span class="bg-white bg-opacity-20 px-1 py-0.5 rounded-full text-sm text-white">${item.year}</span>
                         </div>
-                        
+
                         ${mediaContent}
-                        
-                        <p class="text-gray-200 mb-1 text-xs">${item.description}</p>
-                        
+
+                        <p class="text-gray-200 mb-1 text-sm">${item.description}</p>
+
                         ${techTags ? `<div class="flex flex-wrap gap-1">${techTags}</div>` : ''}
                     </div>
                 `;
             }).join('');
         }
 
-        // Add event listeners for tab buttons
-        document.addEventListener('DOMContentLoaded', function () {
-            // Load portfolio data
-            loadPortfolioData();
+        // Language switching functionality
+        function switchLanguage(language, updateUrl = true) {
+            // Update language buttons
+            document.querySelectorAll('.language-button').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === language) {
+                    btn.classList.add('active');
+                }
+            });
 
-            // Add click listeners to tab buttons
-            document.querySelectorAll('.tab-button').forEach(button => {
+            // Update URL if needed
+            if (updateUrl) {
+                updateURL(language);
+            }
+
+            // Load new language data
+            loadLanguageData(language);
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get language from URL or default to Arabic
+            const initialLanguage = getLanguageFromURL();
+            
+            // Load initial language
+            loadLanguageData(initialLanguage);
+
+            // Update language buttons to reflect URL parameter
+            document.querySelectorAll('.language-button').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === initialLanguage) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Add language switch listeners
+            document.querySelectorAll('.language-button').forEach(button => {
                 button.addEventListener('click', function () {
-                    const tabId = this.getAttribute('data-tab');
-                    showTab(tabId);
+                    const language = this.getAttribute('data-lang');
+                    switchLanguage(language);
                 });
             });
         });
